@@ -2,7 +2,7 @@ from __future__ import annotations
 
 from pathlib import Path
 
-DIR = Path(__file__).resolve()
+DIR = Path(__file__).parent.resolve()
 
 
 def line_delimited_records_text() -> str:
@@ -15,5 +15,9 @@ def single_record_text() -> str:
     return f.read_text()
 
 
-def muons() -> Path:
-    pass
+def muon_files(n: int | None = None) -> list[str]:
+    d = DIR / "data" / "muons"
+    files = sorted(map(str, d.iterdir()))
+    if n is not None:
+        return files[:n]
+    return files
