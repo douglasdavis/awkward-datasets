@@ -10,10 +10,10 @@ def line_delimited_records() -> Path:
 
 
 def line_delimited_records_text() -> str:
-    return line_delimited_records.read_text()
+    return line_delimited_records().read_text()
 
 
-def single_record() -> str:
+def single_record() -> Path:
     return DIR / "data" / "simple" / "single_record.json"
 
 
