@@ -21,7 +21,7 @@ def single_record_text() -> str:
     return single_record().read_text()
 
 
-def muon_files(n: int | None = None) -> list[str]:
+def muons(n: int | None = None) -> list[str]:
     d = DIR / "data" / "muons"
     files = sorted(map(str, d.iterdir()))
     if n is not None:
